@@ -18,7 +18,6 @@
 .block_lpprogress .card1 {
     margin-left: 4em;
     z-index: 0;
-    border-right: 1px solid #F5F5F5;
 }
 
 .block_lpprogress .card1 p {
@@ -61,48 +60,6 @@
     outline-width: 0 !important;
 }
 
-.block_lpprogress .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #E53935;
-}
-
-.block_lpprogress .form-group {
-    position: relative;
-    margin-bottom: 1.5rem;
-    width: 77%;
-}
-
-.block_lpprogress .form-control-placeholder {
-    position: absolute;
-    top: 0px;
-    padding: 12px 2px 0 2px;
-    transition: all 300ms;
-    opacity: 0.5;
-}
-
-.block_lpprogress .form-control:focus+.form-control-placeholder,
-.block_lpprogress .form-control:valid+.form-control-placeholder {
-    font-size: 95%;
-    top: 10px;
-    transform: translate3d(0, -100%, 0);
-    opacity: 1;
-    background-color: #fff;
-}
-
-.block_lpprogress .next-button {
-    width: 18%;
-    height: 50px;
-    background-color: #BDBDBD;
-    color: #fff;
-    border-radius: 6px;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.block_lpprogress .next-button:hover {
-    background-color: #E53935;
-    color: #fff;
-}
-
 .block_lpprogress .final {
     margin-left: 3.2em;
 }
@@ -118,11 +75,14 @@
     list-style-type: none;
     font-size: 8px;
     font-weight: 400;
-    margin-bottom: 36px;
 }
 
-.block_lpprogress #progressbar li:nth-child(3) {
-    margin-bottom: 6em;
+.block_lpprogress #progressbar li:nth-last-child(2) {
+    margin-bottom: 0;
+}
+
+.block_lpprogress #progressbar li:nth-last-child(2):after {
+    height: 6em;
 }
 
 .block_lpprogress #progressbar .step0:before {
@@ -150,29 +110,17 @@
 .block_lpprogress #progressbar li:after {
     content: '';
     width: 3px;
-    height: 66px;
+    height: 4.8em;
     background: #BDBDBD;
-    position: absolute;
     top: 15px;
     left: 4.4em;
     z-index: -1;
+    display: block;
+    margin-left: 2.2em;
 }
 
 .block_lpprogress #progressbar li:last-child:after {
-    top: 147px;
-}
-
-.block_lpprogress #progressbar li:nth-child(3):after {
-    top: 81px;
-}
-
-.block_lpprogress #progressbar li:nth-child(2):after {
-    top: 0px;
-}
-
-.block_lpprogress #progressbar li:first-child:after {
-    position: absolute;
-    top: -81px;
+    height: 0;
 }
 
 .block_lpprogress #progressbar li.active:after {
