@@ -22,46 +22,11 @@
 
 .block_lpprogress .card1 p {
     height: 3.5em;
-}
-
-.block_lpprogress .social {
-    border-radius: 50%;
-    background-color: #FFCDD2;
-    color: #E53935;
-    height: 47px;
-    width: 47px;
-    padding-top: 16px;
-    cursor: pointer;
-}
-
-.block_lpprogress input,
-.block_lpprogress select {
-    padding: 2px;
-    border-radius: 0px;
-    box-sizing: border-box;
-    color: #9E9E9E;
-    border: 1px solid #BDBDBD;
-    font-size: 16px;
-    letter-spacing: 1px;
-    height: 50px !important;
-}
-
-.block_lpprogress select {
-    width: 100%;
-    margin-bottom: 85px;
-}
-
-.block_lpprogress input:focus,
-.block_lpprogress select:focus {
-    -moz-box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    border: 1px solid #E53935 !important;
-    outline-width: 0 !important;
+    margin-top: 0.5em;
 }
 
 .block_lpprogress .final {
-    margin-left: 3.2em;
+    margin-left: 2.75em;
 }
 
 .block_lpprogress #progressbar {
@@ -133,11 +98,6 @@
     content: "\f00c";
 }
 
-.block_lpprogress .tick {
-    width: 100px;
-    height: 100px;
-}
-
 .block_lpprogress @media screen and (max-width: 912px)    .card00 {
         padding-top: 30px;
     }
@@ -147,24 +107,6 @@
         margin-left: 50px;
     }
 
-.block_lpprogress @media screen and (max-width: 912px)    .card2 {
-        border-bottom: 1px solid #F5F5F5;
-        margin-bottom: 25px;
-    }
-
-.block_lpprogress @media screen and (max-width: 912px)    .social {
-        height: 30px;
-        width: 30px;
-        font-size: 15px;
-        padding-top: 8px;
-        margin-top: 7px;
-    }
-
-.block_lpprogress @media screen and (max-width: 912px)    .get-bonus {
-        margin-top: 40px !important;
-        margin-left: 75px;
-    }
-
 .block_lpprogress @media screen and (max-width: 912px)    #progressbar {
         left: -25px;
-    }
+}
