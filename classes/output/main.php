@@ -27,6 +27,11 @@ defined('MOODLE_INTERNAL') || die();
 use renderable;
 use renderer_base;
 use templatable;
+use core_competency\api;
+use core_competency\plan;
+use core_competency\external\performance_helper;
+use core_competency\external\competency_exporter;
+use core_competency\external\plan_exporter;
 
 /**
  * Class containing data for timeline block.
@@ -40,7 +45,8 @@ class main implements renderable, templatable {
      * main constructor.
      *
      */
-    public function __construct() {
+    public function __construct(array $plans) {
+        $this->plans = $plans;
     }
 
     /**
@@ -50,6 +56,52 @@ class main implements renderable, templatable {
      * @return stdClass
      */
     public function export_for_template(renderer_base $output) {
-        return [];
+        $plans = [];
+        foreach ($this->plans as $plan) {
+            if (($plan->get('status') == plan::STATUS_ACTIVE) || ($plan->get('status') == plan::STATUS_COMPLETE)) {
+                $plans[] = $plan;
+            }
+        }
+        $helper = new performance_helper();
+        $activeplans = array();
+        foreach ($plans as $plan) {
+            $planexporter = new plan_exporter($plan, array('template' => $plan->get_template()));
+            $currentplan = $planexporter->export($output);
+
+            if ($currentplan->iscompleted) {
+                $ucproperty = 'usercompetencyplan';
+                $ucexporter = 'core_competency\\external\\user_competency_plan_exporter';
+            } else {
+                $ucproperty = 'usercompetency';
+                $ucexporter = 'core_competency\\external\\user_competency_exporter';
+            }
+            $pclist = api::list_plan_competencies($plan);
+            foreach ($pclist as $pc) {
+                $comp = $pc->competency;
+                $usercomp = $pc->$ucproperty;
+
+                $compcontext = $helper->get_context_from_competency($comp);
+                $framework = $helper->get_framework_from_competency($comp);
+                $scale = $helper->get_scale_from_competency($comp);
+
+                // Prepare the data.
+                $record = new \stdClass();
+                $exporter = new competency_exporter($comp, array('context' => $compcontext));
+                $record->competency = $exporter->export($output);
+
+                $exporter = new $ucexporter($usercomp, array('scale' => $scale));
+                $record->$ucproperty = $exporter->export($output);
+
+                if ($currentplan->iscompleted) {
+                    $record->isproficient = $record->usercompetencyplan->proficiency;
+                } else {
+                    $record->isproficient = $record->usercompetency->proficiency;
+                }
+                $currentplan->competencies[] = $record;
+            }
+
+            $activeplans[] = $currentplan;
+        }
+        return ['plans' => $activeplans];
     }
 }

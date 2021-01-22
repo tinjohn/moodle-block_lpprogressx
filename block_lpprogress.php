@@ -45,6 +45,7 @@ class block_lpprogress extends block_base {
      * @return stdClass The block contents.
      */
     public function get_content() {
+        global $USER;
 
         if ($this->content !== null) {
             return $this->content;
@@ -55,9 +56,18 @@ class block_lpprogress extends block_base {
             return $this->content;
         }
 
+        if (!get_config('core_competency', 'enabled')) {
+            return $this->content;
+        }
+
+        try {
+            $plans = core_competency\api::list_user_plans($USER->id);
+        } catch (required_capability_exception $e) {
+            $plans = [];
+        }
 
         $renderer = $this->page->get_renderer('block_lpprogress');
-        $renderable = new \block_lpprogress\output\main();
+        $renderable = new \block_lpprogress\output\main($plans);
 
         $this->content = (object) [
             'text' => $renderer->render($renderable),

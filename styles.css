@@ -1,33 +1,28 @@
-.block_lpprogress body {
+.block_lpprogress {
     color: #000;
-    overflow-x: hidden;
     height: 100%;
     background-color: #F44336;
-    background-repeat: no-repeat
+    background-repeat: no-repeat;
 }
 
 .block_lpprogress .card0 {
     background-color: #F5F5F5;
     border-radius: 8px;
-    z-index: 0
+    z-index: 0;
 }
 
 .block_lpprogress .card00 {
-    z-index: 0
+    z-index: 0;
 }
 
 .block_lpprogress .card1 {
-    margin-left: 140px;
+    margin-left: 4em;
     z-index: 0;
-    border-right: 1px solid #F5F5F5
+    border-right: 1px solid #F5F5F5;
 }
 
-.block_lpprogress .card2 {
-    display: none
-}
-
-.block_lpprogress .card2.show {
-    display: block
+.block_lpprogress .card1 p {
+    height: 3.5em;
 }
 
 .block_lpprogress .social {
@@ -37,7 +32,7 @@
     height: 47px;
     width: 47px;
     padding-top: 16px;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .block_lpprogress input,
@@ -49,12 +44,12 @@
     border: 1px solid #BDBDBD;
     font-size: 16px;
     letter-spacing: 1px;
-    height: 50px !important
+    height: 50px !important;
 }
 
 .block_lpprogress select {
     width: 100%;
-    margin-bottom: 85px
+    margin-bottom: 85px;
 }
 
 .block_lpprogress input:focus,
@@ -63,17 +58,17 @@
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
     border: 1px solid #E53935 !important;
-    outline-width: 0 !important
+    outline-width: 0 !important;
 }
 
 .block_lpprogress .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #E53935
+    background-color: #E53935;
 }
 
 .block_lpprogress .form-group {
     position: relative;
     margin-bottom: 1.5rem;
-    width: 77%
+    width: 77%;
 }
 
 .block_lpprogress .form-control-placeholder {
@@ -81,7 +76,7 @@
     top: 0px;
     padding: 12px 2px 0 2px;
     transition: all 300ms;
-    opacity: 0.5
+    opacity: 0.5;
 }
 
 .block_lpprogress .form-control:focus+.form-control-placeholder,
@@ -90,7 +85,7 @@
     top: 10px;
     transform: translate3d(0, -100%, 0);
     opacity: 1;
-    background-color: #fff
+    background-color: #fff;
 }
 
 .block_lpprogress .next-button {
@@ -100,44 +95,39 @@
     color: #fff;
     border-radius: 6px;
     padding: 10px;
-    cursor: pointer
+    cursor: pointer;
 }
 
 .block_lpprogress .next-button:hover {
     background-color: #E53935;
-    color: #fff
+    color: #fff;
 }
 
-.block_lpprogress .get-bonus {
-    margin-left: 154px
-}
-
-.block_lpprogress .pic {
-    width: 230px;
-    height: 110px
+.block_lpprogress .final {
+    margin-left: 3.2em;
 }
 
 .block_lpprogress #progressbar {
     position: absolute;
-    left: 35px;
+    left: 0px;
     overflow: hidden;
-    color: #E53935
+    color: #E53935;
 }
 
 .block_lpprogress #progressbar li {
     list-style-type: none;
     font-size: 8px;
     font-weight: 400;
-    margin-bottom: 36px
+    margin-bottom: 36px;
 }
 
 .block_lpprogress #progressbar li:nth-child(3) {
-    margin-bottom: 88px
+    margin-bottom: 6em;
 }
 
 .block_lpprogress #progressbar .step0:before {
     content: "";
-    color: #fff
+    color: #fff;
 }
 
 .block_lpprogress #progressbar li:before {
@@ -149,12 +139,12 @@
     background: #fff;
     border: 2px solid #E53935;
     border-radius: 50%;
-    margin: auto
+    margin: auto;
 }
 
 .block_lpprogress #progressbar li:last-child:before {
     width: 40px;
-    height: 40px
+    height: 40px;
 }
 
 .block_lpprogress #progressbar li:after {
@@ -163,68 +153,55 @@
     height: 66px;
     background: #BDBDBD;
     position: absolute;
-    left: 58px;
     top: 15px;
-    z-index: -1
+    left: 4.4em;
+    z-index: -1;
 }
 
 .block_lpprogress #progressbar li:last-child:after {
     top: 147px;
-    height: 132px
 }
 
 .block_lpprogress #progressbar li:nth-child(3):after {
-    top: 81px
+    top: 81px;
 }
 
 .block_lpprogress #progressbar li:nth-child(2):after {
-    top: 0px
+    top: 0px;
 }
 
 .block_lpprogress #progressbar li:first-child:after {
     position: absolute;
-    top: -81px
+    top: -81px;
 }
 
 .block_lpprogress #progressbar li.active:after {
-    background: #E53935
+    background: #E53935;
 }
 
 .block_lpprogress #progressbar li.active:before {
     background: #E53935;
     font-family: FontAwesome;
-    content: "\f00c"
+    content: "\f00c";
 }
 
 .block_lpprogress .tick {
     width: 100px;
-    height: 100px
-}
-
-.block_lpprogress .prev {
-    display: block;
-    position: absolute;
-    left: 40px;
-    top: 20px;
-    cursor: pointer
-}
-
-.block_lpprogress .prev:hover {
-    color: #D50000 !important
+    height: 100px;
 }
 
 .block_lpprogress @media screen and (max-width: 912px)    .card00 {
-        padding-top: 30px
+        padding-top: 30px;
     }
 
 .block_lpprogress @media screen and (max-width: 912px)    .card1 {
         border: none;
-        margin-left: 50px
+        margin-left: 50px;
     }
 
 .block_lpprogress @media screen and (max-width: 912px)    .card2 {
         border-bottom: 1px solid #F5F5F5;
-        margin-bottom: 25px
+        margin-bottom: 25px;
     }
 
 .block_lpprogress @media screen and (max-width: 912px)    .social {
@@ -232,14 +209,14 @@
         width: 30px;
         font-size: 15px;
         padding-top: 8px;
-        margin-top: 7px
+        margin-top: 7px;
     }
 
 .block_lpprogress @media screen and (max-width: 912px)    .get-bonus {
         margin-top: 40px !important;
-        margin-left: 75px
+        margin-left: 75px;
     }
 
 .block_lpprogress @media screen and (max-width: 912px)    #progressbar {
-        left: -25px
+        left: -25px;
     }
