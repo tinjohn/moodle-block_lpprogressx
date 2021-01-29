@@ -38,4 +38,36 @@
 </div>
 {{/plans}}
 {{#js}}
+require(['jquery',
+        'core/templates',
+        'core/ajax',
+        'core/notification',
+        'core/str',
+        'tool_lp/dialogue'],
+        function($, templates, ajax, notification, str, Dialogue) {
+
+    $('section.block_lpprogress').find('[data-action="find-courses-link"]').click(function(e) {
+        e.preventDefault();
+
+        var competencyid = $(e.target).data('id');
+        var requests = ajax.call([{
+            methodname: 'tool_lp_list_courses_using_competency',
+            args: {id: competencyid}
+        }]);
+
+        requests[0].done(function(courses) {
+            var context = {
+                courses: courses
+            };
+            templates.render('tool_lp/linked_courses_summary', context).done(function(html) {
+                str.get_string('linkedcourses', 'tool_lp').done(function(linkedcourses) {
+                    new Dialogue(
+                        linkedcourses, // Title.
+                        html // The linked courses.
+                    );
+                }).fail(notification.exception);
+            }).fail(notification.exception);
+        }).fail(notification.exception);
+    });
+});
 {{/js}}
