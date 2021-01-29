@@ -1,8 +1,8 @@
 # Learning Plans Progress #
 
-TODO Describe the plugin shortly here.
+This blocks shows the progress of learning plans in a vertical progress bar with "check" icons for each competency.
 
-TODO Provide more detailed description here.
+By clicking in the competency name  the user can see the list of linked courses and access the course by clicking on it's name.
 
 ## License ##
 
