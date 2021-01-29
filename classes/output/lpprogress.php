@@ -36,13 +36,13 @@ use core_competency\external\plan_exporter;
 /**
  * Class containing data for timeline block.
  *
- * @copyright  2018 Ryan Wyllie <ryan@moodle.com>
+ * @copyright  Daniel Neis Araujo <daniel@adapta.online>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class main implements renderable, templatable {
+class lpprogress implements renderable, templatable {
 
     /**
-     * main constructor.
+     * lpprogress constructor.
      *
      */
     public function __construct(array $plans) {

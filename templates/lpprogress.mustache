@@ -19,7 +19,7 @@
                                             <li class="step0 {{#iscompleted}}active{{/iscompleted}}"></li>
                                         </ul>
                                         {{#competencies}}
-                                        <p>{{competency.shortname}}</p>
+                                        <p><a href="#" data-id="{{competency.id}}" data-action="find-courses-link">{{competency.shortname}}</a></p>
                                         {{/competencies}}
                                     </div>
                                 </div>
@@ -37,3 +37,5 @@
     </div>
 </div>
 {{/plans}}
+{{#js}}
+{{/js}}
