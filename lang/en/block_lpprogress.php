@@ -25,4 +25,5 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+$string['completed'] = 'Completed!';
 $string['pluginname'] = 'Learning Plans Progress';

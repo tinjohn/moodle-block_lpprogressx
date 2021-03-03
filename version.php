@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'block_lpprogress';
-$plugin->release = '1';
-$plugin->version = 2021012900;
+$plugin->release = '2';
+$plugin->version = 2021030300;
 $plugin->requires = 2020061500;
 $plugin->maturity = MATURITY_STABLE;
