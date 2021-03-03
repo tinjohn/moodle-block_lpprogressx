@@ -44,6 +44,7 @@ class lpprogress implements renderable, templatable {
     /**
      * lpprogress constructor.
      *
+     * @param array $plans The list of learning plans
      */
     public function __construct(array $plans) {
         $this->plans = $plans;
