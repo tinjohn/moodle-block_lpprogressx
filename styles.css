@@ -1,12 +1,12 @@
 .block_lpprogress {
     color: #000;
     height: 100%;
-    background-color: #F44336;
+    background-color: #f44336;
     background-repeat: no-repeat;
 }
 
 .block_lpprogress .card0 {
-    background-color: #F5F5F5;
+    background-color: #f5f5f5;
     border-radius: 8px;
     z-index: 0;
 }
@@ -31,9 +31,9 @@
 
 .block_lpprogress #progressbar {
     position: absolute;
-    left: 0px;
+    left: 0;
     overflow: hidden;
-    color: #E53935;
+    color: #e53935;
 }
 
 .block_lpprogress #progressbar li {
@@ -62,7 +62,7 @@
     display: block;
     font-size: 20px;
     background: #fff;
-    border: 2px solid #E53935;
+    border: 2px solid #e53935;
     border-radius: 50%;
     margin: auto;
 }
@@ -76,7 +76,7 @@
     content: '';
     width: 3px;
     height: 4.8em;
-    background: #BDBDBD;
+    background: #bdbdbd;
     top: 15px;
     left: 4.4em;
     z-index: -1;
@@ -89,24 +89,11 @@
 }
 
 .block_lpprogress #progressbar li.active:after {
-    background: #E53935;
+    background: #e53935;
 }
 
 .block_lpprogress #progressbar li.active:before {
-    background: #E53935;
-    font-family: FontAwesome;
+    background: #e53935;
+    font-family: fontawesome;
     content: "\f00c";
-}
-
-.block_lpprogress @media screen and (max-width: 912px)    .card00 {
-        padding-top: 30px;
-    }
-
-.block_lpprogress @media screen and (max-width: 912px)    .card1 {
-        border: none;
-        margin-left: 50px;
-    }
-
-.block_lpprogress @media screen and (max-width: 912px)    #progressbar {
-        left: -25px;
 }
