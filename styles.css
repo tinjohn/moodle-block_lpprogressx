@@ -1,6 +1,5 @@
 .block_lpprogress {
     color: #000;
-    height: 100%;
     background-color: #f44336;
     background-repeat: no-repeat;
 }
@@ -15,18 +14,9 @@
     z-index: 0;
 }
 
-.block_lpprogress .card1 {
-    margin-left: 4em;
-    z-index: 0;
-}
-
-.block_lpprogress .card1 p {
-    height: 3.5em;
-    margin-top: 0.5em;
-}
-
 .block_lpprogress .final {
     margin-left: 2.75em;
+    margin-top: 0.2em;
 }
 
 .block_lpprogress #progressbar {
@@ -40,6 +30,7 @@
     list-style-type: none;
     font-size: 8px;
     font-weight: 400;
+    height: 8em;
 }
 
 .block_lpprogress #progressbar li:nth-last-child(2) {
@@ -47,12 +38,12 @@
 }
 
 .block_lpprogress #progressbar li:nth-last-child(2):after {
-    height: 6em;
+    height: 8em;
 }
 
 .block_lpprogress #progressbar .step0:before {
     content: "";
-    color: #fff;
+    background-color: #999da0;
 }
 
 .block_lpprogress #progressbar li:before {
@@ -62,20 +53,15 @@
     display: block;
     font-size: 20px;
     background: #fff;
-    border: 2px solid #e53935;
+    border: 2px solid white;
     border-radius: 50%;
     margin: auto;
 }
 
-.block_lpprogress #progressbar li:last-child:before {
-    width: 40px;
-    height: 40px;
-}
-
 .block_lpprogress #progressbar li:after {
     content: '';
-    width: 3px;
-    height: 4.8em;
+    width: 4px;
+    height: 5em;
     background: #bdbdbd;
     top: 15px;
     left: 4.4em;
@@ -84,16 +70,34 @@
     margin-left: 2.2em;
 }
 
+.block_lpprogress #progressbar li:last-child {
+    margin-top: 3.5em;
+}
+
+.block_lpprogress #progressbar li:last-child:before {
+    width: 40px;
+    height: 40px;
+}
+
+
 .block_lpprogress #progressbar li:last-child:after {
     height: 0;
 }
 
-.block_lpprogress #progressbar li.active:after {
-    background: #e53935;
+.block_lpprogress #progressbar li:after {
+    background: #c6e4c0;
 }
 
 .block_lpprogress #progressbar li.active:before {
-    background: #e53935;
+    background: #17a23f;
     font-family: fontawesome;
-    content: "\f00c";
+}
+
+.block_lpprogress .card1 {
+    margin-left: 4em;
+}
+
+.block_lpprogress .card1 p {
+    height: 3.5em;
+    margin-top: 0.5em;
 }
