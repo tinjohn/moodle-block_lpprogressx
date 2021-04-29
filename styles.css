@@ -4,87 +4,60 @@
     background-repeat: no-repeat;
 }
 
-.block_lpprogress .card0 {
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    z-index: 0;
-}
-
-.block_lpprogress .card00 {
-    z-index: 0;
-}
-
 .block_lpprogress .final {
-    margin-left: 2.75em;
-    margin-top: 0.2em;
-}
-
-.block_lpprogress #progressbar {
-    position: absolute;
-    left: 0;
-    overflow: hidden;
-    color: #e53935;
+    display: inline;
+    vertical-align: super;
+    margin-left: 0.7em;
 }
 
 .block_lpprogress #progressbar li {
     list-style-type: none;
-    font-size: 8px;
-    font-weight: 400;
-    height: 8em;
 }
 
-.block_lpprogress #progressbar li:nth-last-child(2) {
-    margin-bottom: 0;
-}
-
-.block_lpprogress #progressbar li:nth-last-child(2):after {
-    height: 8em;
+.block_lpprogress #progressbar li a {
+    margin-left: 1em;
+    vertical-align: -15%;
 }
 
 .block_lpprogress #progressbar .step0:before {
     content: "";
     background-color: #999da0;
+    position: absolute;
+    left: 0.55em;
 }
 
 .block_lpprogress #progressbar li:before {
     width: 30px;
     height: 30px;
     line-height: 30px;
-    display: block;
+    display: inline-block;
     font-size: 20px;
     background: #fff;
     border: 2px solid white;
     border-radius: 50%;
-    margin: auto;
 }
 
 .block_lpprogress #progressbar li:after {
     content: '';
     width: 4px;
-    height: 5em;
+    height: 2em;
     background: #bdbdbd;
-    top: 15px;
-    left: 4.4em;
-    z-index: -1;
     display: block;
-    margin-left: 2.2em;
-}
-
-.block_lpprogress #progressbar li:last-child {
-    margin-top: 3.5em;
+    margin-left: -0.5em;
 }
 
 .block_lpprogress #progressbar li:last-child:before {
     width: 40px;
     height: 40px;
+    display: inline-block;
+    margin-left: -0.25em;
 }
-
 
 .block_lpprogress #progressbar li:last-child:after {
     height: 0;
 }
 
-.block_lpprogress #progressbar li:after {
+.block_lpprogress #progressbar li.active:after {
     background: #c6e4c0;
 }
 
@@ -92,12 +65,7 @@
     background: #17a23f;
     font-family: fontawesome;
 }
-
-.block_lpprogress .card1 {
-    margin-left: 4em;
-}
-
-.block_lpprogress .card1 p {
-    height: 3.5em;
-    margin-top: 0.5em;
+#block-region-side-pre .block_lpprogress .col-3 {
+  flex: unset;
+  max-width: 100% ;
 }
