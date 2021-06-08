@@ -26,4 +26,6 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['completed'] = 'Completed!';
+$string['lpprogress:addinstance'] = 'Add Learning Plans Progress block';
+$string['lpprogress:myaddinstance'] = 'Add Learning Plans Progress block to dashboard';
 $string['pluginname'] = 'Learning Plans Progress';
