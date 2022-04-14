@@ -27,6 +27,8 @@ defined('MOODLE_INTERNAL') || die();
 use renderable;
 use renderer_base;
 use templatable;
+use moodle_url;
+
 use core_competency\api;
 use core_competency\plan;
 use core_competency\external\performance_helper;
@@ -57,6 +59,9 @@ class lpprogress implements renderable, templatable {
      * @return stdClass
      */
     public function export_for_template(renderer_base $output) {
+      global $USER;
+
+        $url = [];
         $plans = [];
         foreach ($this->plans as $plan) {
             if (($plan->get('status') == plan::STATUS_ACTIVE) || ($plan->get('status') == plan::STATUS_COMPLETE)) {
@@ -103,6 +108,6 @@ class lpprogress implements renderable, templatable {
 
             $activeplans[] = $currentplan;
         }
-        return ['plans' => $activeplans];
+        return ['plans' => $activeplans, 'url' => new moodle_url('/admin/tool/lp/editplan.php', array('userid' => $USER->id))];
     }
 }

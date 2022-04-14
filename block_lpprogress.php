@@ -70,8 +70,8 @@ class block_lpprogress extends block_base {
         $renderable = new \block_lpprogress\output\lpprogress($plans);
 
         $this->content = (object) [
-            'text' => $renderer->render($renderable),
-            'footer' => ''
+          'text' => $renderer->render($renderable),
+          'footer' => ''
         ];
 
         return $this->content;

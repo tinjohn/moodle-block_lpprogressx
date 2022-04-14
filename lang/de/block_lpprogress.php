@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['completed'] = 'Completed!';
+$string['completed'] = 'abgeschlossen';
 $string['checkchar'] = '◉';
 $string['uncheckchar'] = '◎';
-$string['pluginname'] = 'Learning Plans Progress';
+$string['pluginname'] = 'Lernplan Fortschritt';
