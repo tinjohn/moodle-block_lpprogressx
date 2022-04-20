@@ -59,7 +59,7 @@ class lpprogress implements renderable, templatable {
      * @return stdClass
      */
     public function export_for_template(renderer_base $output) {
-      global $USER;
+       global $USER;
 
         $url = [];
         $plans = [];
@@ -108,6 +108,6 @@ class lpprogress implements renderable, templatable {
 
             $activeplans[] = $currentplan;
         }
-        return ['plans' => $activeplans, 'url' => new moodle_url('/admin/tool/lp/editplan.php', array('userid' => $USER->id))];
+        return ['plans' => $activeplans, 'usrid' => $USER->id, 'url' => new moodle_url('/admin/tool/lp/editplan.php', array('userid' => $USER->id))];
     }
 }

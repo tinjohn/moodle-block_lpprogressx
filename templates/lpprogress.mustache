@@ -42,7 +42,14 @@
     }
 }}
 <div class="row">
-  <a href="{{url}}">{{url}} Text</a>
+  <div class="singlebutton">
+      <form method="get" action="{{url}}">
+          <input type="hidden" name="userid" value="{{usrid}}">
+          <button type="submit" class="btn btn-secondary" id="single_button625ee1973d6e019" title="">{{#str}} addnewplan, tool_lp {{/str}}</button>
+      </form>
+  </div>
+
+
 
   {{#plans}}
     <div class="col-3">
