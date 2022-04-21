@@ -1,6 +1,6 @@
 # Learning Plans Progress X Version #
 
-This X Version is an extented version of the Learning Plans Progress Moodle Plugin (block_lpprogress) by Daniel Neis Araujo <daniel@adapta.online>.
+This X version is an extented version of the Learning Plans Progress Moodle Plugin (block_lpprogress) by Daniel Neis Araujo <daniel@adapta.online>.
 
 # Learning Plans Progress by Daniel Neis Araujo #
 
