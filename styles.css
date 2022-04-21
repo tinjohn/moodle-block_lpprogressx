@@ -1,32 +1,32 @@
-.block_lpprogress {
+.block_lpprogressx {
     color: #000;
     background-color: #f44336;
     background-repeat: no-repeat;
 }
 
-.block_lpprogress .final {
+.block_lpprogressx .final {
     display: inline;
     vertical-align: super;
     margin-left: 0.7em;
 }
 
-.block_lpprogress #progressbar li {
+.block_lpprogressx #progressbar li {
     list-style-type: none;
 }
 
-.block_lpprogress #progressbar li a {
+.block_lpprogressx #progressbar li a {
     margin-left: 1em;
     vertical-align: -15%;
 }
 
-.block_lpprogress #progressbar .step0:before {
+.block_lpprogressx #progressbar .step0:before {
     content: "";
     background-color: #999da0;
     position: absolute;
     left: 0.55em;
 }
 
-.block_lpprogress #progressbar li:before {
+.block_lpprogressx #progressbar li:before {
     width: 30px;
     height: 30px;
     line-height: 30px;
@@ -37,7 +37,7 @@
     border-radius: 50%;
 }
 
-.block_lpprogress #progressbar li:after {
+.block_lpprogressx #progressbar li:after {
     content: '';
     width: 4px;
     height: 2em;
@@ -46,26 +46,26 @@
     margin-left: -0.5em;
 }
 
-.block_lpprogress #progressbar li:last-child:before {
+.block_lpprogressx #progressbar li:last-child:before {
     width: 40px;
     height: 40px;
     display: inline-block;
     margin-left: -0.25em;
 }
 
-.block_lpprogress #progressbar li:last-child:after {
+.block_lpprogressx #progressbar li:last-child:after {
     height: 0;
 }
 
-.block_lpprogress #progressbar li.active:after {
+.block_lpprogressx #progressbar li.active:after {
     background: #c6e4c0;
 }
 
-.block_lpprogress #progressbar li.active:before {
+.block_lpprogressx #progressbar li.active:before {
     background: #17a23f;
     font-family: fontawesome;
 }
-#block-region-side-pre .block_lpprogress .col-3 {
+#block-region-side-pre .block_lpprogressx .col-3 {
   flex: unset;
   max-width: 100% ;
 }

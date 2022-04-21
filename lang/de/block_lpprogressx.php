@@ -17,7 +17,7 @@
 /**
  * Plugin strings are defined here.
  *
- * @package     block_lpprogress
+ * @package     block_lpprogressx
  * @category    string
  * @copyright   2021 Daniel Neis Araujo <daniel@adapta.online>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['completed'] = 'Completed!';
+$string['completed'] = 'abgeschlossen';
 $string['checkchar'] = '◉';
 $string['uncheckchar'] = '◎';
-$string['pluginname'] = 'Learning Plans Progress';
+$string['pluginname'] = 'Lernplan Fortschritt (x-Version)';

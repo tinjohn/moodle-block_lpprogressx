@@ -15,28 +15,28 @@
 // along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
 
 /**
- * Block lpprogress is defined here.
+ * Block lpprogressx is defined here.
  *
- * @package     block_lpprogress
+ * @package     block_lpprogressx
  * @copyright   2021 Daniel Neis Araujo <daniel@adapta.online>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
- * lpprogress block.
+ * lpprogressx block.
  *
- * @package    block_lpprogress
+ * @package    block_lpprogressx
  * @copyright  2021 Daniel Neis Araujo <daniel@adapta.online>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class block_lpprogress extends block_base {
+class block_lpprogressx extends block_base {
 
     /**
      * Initializes class member variables.
      */
     public function init() {
         // Needed by Moodle to differentiate between blocks.
-        $this->title = get_string('pluginname', 'block_lpprogress');
+        $this->title = get_string('pluginname', 'block_lpprogressx');
     }
 
     /**
@@ -66,8 +66,8 @@ class block_lpprogress extends block_base {
             $plans = [];
         }
 
-        $renderer = $this->page->get_renderer('block_lpprogress');
-        $renderable = new \block_lpprogress\output\lpprogress($plans);
+        $renderer = $this->page->get_renderer('block_lpprogressx');
+        $renderable = new \block_lpprogressx\output\lpprogressx($plans);
 
         $this->content = (object) [
           'text' => $renderer->render($renderable),
@@ -86,7 +86,7 @@ class block_lpprogress extends block_base {
 
         // Load user defined title and make sure it's never empty.
         if (empty($this->config->title)) {
-            $this->title = get_string('pluginname', 'block_lpprogress');
+            $this->title = get_string('pluginname', 'block_lpprogressx');
         } else {
             $this->title = $this->config->title;
         }

@@ -17,15 +17,15 @@
 /**
  * Plugin version and other meta-data are defined here.
  *
- * @package     block_lpprogress
+ * @package     block_lpprogressx
  * @copyright   2021 Daniel Neis Araujo <daniel@adapta.online>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'block_lpprogress';
-$plugin->release = '5';
-$plugin->version = 2021051300;
+$plugin->component = 'block_lpprogressx';
+$plugin->release = '1';
+$plugin->version = 2022042100;
 $plugin->requires = 2020061500;
 $plugin->maturity = MATURITY_STABLE;

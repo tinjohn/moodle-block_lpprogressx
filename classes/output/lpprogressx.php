@@ -15,13 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Class containing data for lpprogress block.
+ * Class containing data for lpprogressx block.
  *
- * @package     block_lpprogress
+ * @package     block_lpprogressx
  * @copyright   2021 Daniel Neis Araujo <daniel@adapta.online>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-namespace block_lpprogress\output;
+namespace block_lpprogressx\output;
 defined('MOODLE_INTERNAL') || die();
 
 use renderable;
@@ -41,10 +41,10 @@ use core_competency\external\plan_exporter;
  * @copyright  Daniel Neis Araujo <daniel@adapta.online>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class lpprogress implements renderable, templatable {
+class lpprogressx implements renderable, templatable {
 
     /**
-     * lpprogress constructor.
+     * lpprogressx constructor.
      *
      * @param array $plans The list of learning plans
      */

@@ -17,11 +17,11 @@
 /**
  * Learning Plan Progress block block renderer.
  *
- * @package    block_lpprogress
+ * @package    block_lpprogressx
  * @copyright  2021 Daniel Neis Araujo <daniel@adapta.online>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-namespace block_lpprogress\output;
+namespace block_lpprogressx\output;
 defined('MOODLE_INTERNAL') || die;
 
 use plugin_renderer_base;
@@ -30,7 +30,7 @@ use renderable;
 /**
  * Learning Plan Progress block renderer.
  *
- * @package    block_lpprogress
+ * @package    block_lpprogressx
  * @copyright  2021 Daniel Neis Araujo <daniel@adapta.online>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

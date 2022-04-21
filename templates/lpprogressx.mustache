@@ -15,7 +15,7 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template block_lpprogress/lpprogress
+    @template block_lpprogressx/lpprogressx
 
     This template renders the learning plan progress.
 
@@ -56,10 +56,10 @@
         <div class="card">
             <p class="">
               {{#iscompleted}}
-                <span class="small active"><span class="small">{{#str}} checkchar, block_lpprogress {{/str}}</span></span>
+                <span class="small active"><span class="small">{{#str}} checkchar, block_lpprogressx {{/str}}</span></span>
               {{/iscompleted}}
               {{^iscompleted}}
-                <span class="small active"><span class="small">{{#str}} uncheckchar, block_lpprogress {{/str}}</span></span>
+                <span class="small active"><span class="small">{{#str}} uncheckchar, block_lpprogressx {{/str}}</span></span>
               {{/iscompleted}}
               <a href="{{url}}">{{name}}</a>
               {{#iscompleted}}
@@ -78,7 +78,7 @@
                   </li>
                 {{/competencies}}
                 <li class="step0 {{#iscompleted}}active{{/iscompleted}}">
-                  <h4 class="text-muted final">{{#str}} completed, block_lpprogress {{/str}}</h4>
+                  <h4 class="text-muted final">{{#str}} completed, block_lpprogressx {{/str}}</h4>
                 </li>
               </ul>
             </div>
@@ -95,7 +95,7 @@ require(['jquery',
         'tool_lp/dialogue'],
         function($, templates, ajax, notification, str, Dialogue) {
 
-    $('section.block_lpprogress').find('[data-action="find-courses-link"]').click(function(e) {
+    $('section.block_lpprogressx').find('[data-action="find-courses-link"]').click(function(e) {
         e.preventDefault();
 
         var competencyid = $(e.target).data('id');
