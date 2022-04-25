@@ -53,13 +53,16 @@
     <div class="col-3">
         <div class="card">
             <p class="">
-              {{#iscompleted}}
-                <span class="small active"><span class="small">{{#str}} checkchar, block_lpprogressx {{/str}}</span></span>
-              {{/iscompleted}}
-              {{^iscompleted}}
-                <span class="small active"><span class="small">{{#str}} uncheckchar, block_lpprogressx {{/str}}</span></span>
-              {{/iscompleted}}
-              <a href="{{url}}">{{name}}</a>
+              <a href="{{url}}">
+                {{#iscompleted}}
+                  <span class="small active"><span class="small">{{#str}} checkchar, block_lpprogressx {{/str}}</span></span>
+                {{/iscompleted}}
+                {{^iscompleted}}
+                  <span class="small active"><span class="small">{{#str}} uncheckchar, block_lpprogressx {{/str}}</span></span>
+                {{/iscompleted}}
+                
+                {{name}}
+              </a>
               {{#iscompleted}}
                 <a class="sectiontoggle collapsed" data-toggle="collapse" href="#collapsePlan{{id}}" role="button" aria-expanded="false" aria-controls="collapsePlan{{id}}"> ▾▴</a>
               {{/iscompleted}}
