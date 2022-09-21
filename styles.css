@@ -1,4 +1,8 @@
 .block_lpprogressx {
+  --lppx-green: #17a23f;
+}
+
+.block_lpprogressx {
     color: #000;
     background-color: #f44336;
     background-repeat: no-repeat;
@@ -9,7 +13,9 @@
     vertical-align: super;
     margin-left: 0.7em;
 }
-
+.block_lpprogressx .green {
+  color: var(--lppx-green);
+}
 .block_lpprogressx #progressbar li {
     list-style-type: none;
 }
@@ -62,7 +68,7 @@
 }
 
 .block_lpprogressx #progressbar li.active:before {
-    background: #17a23f;
+    background: var(--lppx-green);
     font-family: fontawesome;
 }
 #block-region-side-pre .block_lpprogressx .col-3 {

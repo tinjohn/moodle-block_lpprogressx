@@ -18,7 +18,8 @@
  * Plugin version and other meta-data are defined here.
  *
  * @package     block_lpprogressx
- * @copyright   2021 Daniel Neis Araujo <daniel@adapta.online>
+ * @copyright  2022 Tina John <johnt.22.tijo@gmail.com>
+ * @copyright  based on the work 2021 Daniel Neis Araujo <daniel@adapta.online>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 

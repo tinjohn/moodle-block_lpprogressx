@@ -46,6 +46,7 @@
         <input type="hidden" name="userid" value="{{usrid}}">
         <button type="submit" class="btn btn-secondary" id="single_button625ee1973d6e019" title="">{{#str}} addnewplan, tool_lp {{/str}}</button>
     </form>
+    <br>
 </div>
 
 <div class="row">
@@ -55,23 +56,26 @@
             <p class="">
               <a href="{{url}}">
                 {{#iscompleted}}
-                  <span class="small active"><span class="small">{{#str}} checkchar, block_lpprogressx {{/str}}</span></span>
+                  <span class="active green"><span class="">{{#str}} checkchar, block_lpprogressx {{/str}}</span>
+                  {{name}}
+                </span>
                 {{/iscompleted}}
                 {{^iscompleted}}
-                  <span class="small active"><span class="small">{{#str}} uncheckchar, block_lpprogressx {{/str}}</span></span>
+                  <span class="active"><span class="">{{#str}} uncheckchar, block_lpprogressx {{/str}}</span>
+                      {{name}}
+                    </span>
                 {{/iscompleted}}
-                
-                {{name}}
+
               </a>
               {{#iscompleted}}
-                <a class="sectiontoggle collapsed" data-toggle="collapse" href="#collapsePlan{{id}}" role="button" aria-expanded="false" aria-controls="collapsePlan{{id}}"> ▾▴</a>
+                <a class="sectiontoggle collapsed {{#iscompleted}} green {{/iscompleted}}" data-toggle="collapse" href="#collapsePlan{{id}}" role="button" aria-expanded="false" aria-controls="collapsePlan{{id}}"> ▾▴</a>
               {{/iscompleted}}
             </p>
             <div class="col-md-12 {{#iscompleted}}collapse{{/iscompleted}}" {{#iscompleted}}id="collapsePlan{{id}}"{{/iscompleted}} >
               <ul id="progressbar">
                 {{#competencies}}
-                  <li class="step0 {{#isproficient}}active{{/isproficient}}">
-                    <a href="#" data-id="{{competency.id}}" data-action="find-courses-link">{{competency.shortname}}</a>
+                  <li class="step0 {{#isproficient}}active green{{/isproficient}} ">
+                    <a class="{{#isproficient}}active green{{/isproficient}}" href="#" data-id="{{competency.id}}" data-action="find-courses-link">{{competency.shortname}}</a>
                     <a data-toggle="collapse" href="#competencyDescription{{competency.id}}" role="button" aria-expanded="false" aria-controls="competencyDescription{{competency.id}}">…</a>
                     <div class="collapse" id="competencyDescription{{competency.id}}">
                         {{{competency.description}}}
@@ -79,7 +83,7 @@
                   </li>
                 {{/competencies}}
                 <li class="step0 {{#iscompleted}}active{{/iscompleted}}">
-                  <h4 class="text-muted final">{{#str}} completed, block_lpprogressx {{/str}}</h4>
+                  <h4 class="{{^iscompleted}}text-muted{{/iscompleted}}{{#iscompleted}}green{{/iscompleted}} final">{{#str}} completed, block_lpprogressx {{/str}}</h4>
                 </li>
               </ul>
             </div>

@@ -13,6 +13,7 @@ Adds some features:
 * toggle single progress bars
 * collapse completed plans
 * button to the Add new plan interface
+* minor mods 
 
 ## License ##
 
