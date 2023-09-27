@@ -25,6 +25,9 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+$string['config_title'] = 'Alternativer Blockname';
+$string['insidebar'] = 'Sidebarlayout nutzen';
+$string['insidebar_help'] = 'In der Sidebar wird ein einspalten Layout verwendet sonst 2 Spalten';
 $string['completed'] = 'abgeschlossen';
 $string['checkchar'] = '◉';
 $string['uncheckchar'] = '◎';
