@@ -48,8 +48,9 @@ class lpprogressx implements renderable, templatable {
      *
      * @param array $plans The list of learning plans
      */
-    public function __construct(array $plans) {
+    public function __construct(array $plans, $insidebar) {
         $this->plans = $plans;
+        $this->insidebar = $insidebar;
     }
 
     /**
@@ -63,6 +64,7 @@ class lpprogressx implements renderable, templatable {
 
         $url = [];
         $plans = [];
+
         foreach ($this->plans as $plan) {
             if (($plan->get('status') == plan::STATUS_ACTIVE) || ($plan->get('status') == plan::STATUS_COMPLETE)) {
                 $plans[] = $plan;
@@ -108,6 +110,10 @@ class lpprogressx implements renderable, templatable {
 
             $activeplans[] = $currentplan;
         }
-        return ['plans' => $activeplans, 'usrid' => $USER->id, 'url' => new moodle_url('/admin/tool/lp/editplan.php', array('userid' => $USER->id))];
+        return ['plans' => $activeplans, 
+                'usrid' => $USER->id, 
+                'insidebar' => $this->insidebar, 
+                'url' => new moodle_url('/admin/tool/lp/editplan.php', 
+                array('userid' => $USER->id))];
     }
 }

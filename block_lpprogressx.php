@@ -18,7 +18,7 @@
  * Block lpprogressx is defined here.
  *
  * @package     block_lpprogressx
- * @copyright   2021 Daniel Neis Araujo <daniel@adapta.online>
+ * @copyright   2023 Daniel Neis Araujo <daniel@adapta.online>
  * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -67,7 +67,7 @@ class block_lpprogressx extends block_base {
         }
 
         $renderer = $this->page->get_renderer('block_lpprogressx');
-        $renderable = new \block_lpprogressx\output\lpprogressx($plans);
+        $renderable = new \block_lpprogressx\output\lpprogressx($plans, $this->insidebar);
 
         $this->content = (object) [
           'text' => $renderer->render($renderable),
@@ -90,6 +90,7 @@ class block_lpprogressx extends block_base {
         } else {
             $this->title = $this->config->title;
         }
+        $this->insidebar = $this->config->insidebar;
     }
 
     /**
