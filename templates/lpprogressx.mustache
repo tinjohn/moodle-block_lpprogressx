@@ -53,6 +53,9 @@
 </div>
 
 <div class="metatile-container">
+  {{^plans}}
+    <p dir="ltr" style="text-align: left;"><span>Lass dir vorbereitete Lernpläne anzeigen. Diese Option kannst du aktivieren, indem du in deinem Profil unter&nbsp;</span><a href="https://dev-isy.th-luebeck.de/oncapflege/user/edit.php?returnto=profile">Profil bearbeiten</a>&nbsp;bei&nbsp;<strong>Weitere Felder</strong>&nbsp;das Feld&nbsp;<strong>Lernplanvorschläge</strong><span>&nbsp;anzeigen ankreuzt. Das System sucht dann vorbereitete Lernpläne aus und zeigt sie dir an. Du kannst selbst entscheiden, ob du den gesamten Lernpfad oder nur Teile davon absolvieren möchtest.</span></p>  
+  {{/plans}}
   {{#plans}}
   {{#insidebar}}
     <div class="metatile">
