@@ -32,3 +32,5 @@ $string['completed'] = 'abgeschlossen';
 $string['checkchar'] = '◉';
 $string['uncheckchar'] = '◎';
 $string['pluginname'] = 'Lernplan Fortschritt (x-Version)';
+$string['linkedcourses'] = 'Lernen & Prüfen (verknüpfte Nuggets)';
+

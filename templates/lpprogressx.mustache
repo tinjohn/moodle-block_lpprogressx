@@ -17,7 +17,10 @@
 {{!
     @template block_lpprogressx/lpprogressx
 
-    This template renders the learning plan progress.
+    This template renders the learning plan progress. 
+    It adds js click action from PlanActions.prototype._showLinkedCoursesHandler from tool_lp/planactions 
+    to show linked courses.
+
 
     Example context (json):
     {
@@ -49,34 +52,36 @@
     <br>
 </div>
 
-<div class="row">
+<div class="metatile-container">
   {{#plans}}
   {{#insidebar}}
-    <div class="col-3">
+    <div class="metatile">
   {{/insidebar}}
   {{^insidebar}}     
-    <div class="col-6">
+    <div class="metatile">
   {{/insidebar}}
-        <div class="card">
-            <p class="">
-              <a href="{{url}}">
-                {{#iscompleted}}
-                  <span class="active green"><span class="">{{#str}} checkchar, block_lpprogressx {{/str}}</span>
-                  {{name}}
-                </span>
-                {{/iscompleted}}
-                {{^iscompleted}}
-                  <span class="active"><span class="">{{#str}} uncheckchar, block_lpprogressx {{/str}}</span>
-                      {{name}}
-                    </span>
-                {{/iscompleted}}
-
-              </a>
-              {{#iscompleted}}
-                <a class="sectiontoggle collapsed {{#iscompleted}} green {{/iscompleted}}" data-toggle="collapse" href="#collapsePlan{{id}}" role="button" aria-expanded="false" aria-controls="collapsePlan{{id}}"> ▾▴</a>
-              {{/iscompleted}}
-            </p>
-            <div class="col-md-12 {{#iscompleted}}collapse{{/iscompleted}}" {{#iscompleted}}id="collapsePlan{{id}}"{{/iscompleted}} >
+        <div class="metatile-img d-flex justify-content-center align-items-center">
+        {{#iscompleted}}
+            <i class="fa fa-3x fa-graduation-cap green"></i>
+        {{/iscompleted}}
+        {{^iscompleted}} 
+            <i class="fa fa-3x fa-sitemap text-primary"></i>
+        {{/iscompleted}}
+        </div>
+        <div class="metatile-content">
+            <h2 class="d-flex justify-content-between align-items-center">
+                <a class="sectiontoggle collapsed {{#iscompleted}} green {{/iscompleted}}" data-toggle="collapse" href="#collapsePlan{{id}}" role="button" aria-expanded="false" aria-controls="collapsePlan{{id}}">
+                    {{name}}
+                </a>
+                <a class="sectiontoggle collapsed {{#iscompleted}} green {{/iscompleted}}" data-toggle="collapse" href="#collapsePlan{{id}}" role="button" aria-expanded="false" aria-controls="collapsePlan{{id}}">
+                    ▾▴
+                </a>
+                <a href="{{url}}" class="ml-auto hidden">
+                    <i class="icon fa fa-cog fa-fw " title="Lernplan individualisieren" role="img" aria-label="Lernplan individualisieren"></i>
+                </a>
+                    
+            </h2>
+            <div class="col-md-12 collapse" id="collapsePlan{{id}}" >
               <ul id="progressbar">
                 {{#competencies}}
                   <li class="step0 {{#isproficient}}active green{{/isproficient}} ">
@@ -91,6 +96,7 @@
                   <h4 class="{{^iscompleted}}text-muted{{/iscompleted}}{{#iscompleted}}green{{/iscompleted}} final">{{#str}} completed, block_lpprogressx {{/str}}</h4>
                 </li>
               </ul>
+
             </div>
         </div>
     </div>
@@ -115,11 +121,22 @@ require(['jquery',
         }]);
 
         requests[0].done(function(courses) {
+            courses.forEach(function (course) {
+                // tinjohn ADDED Extract the first part of the shortname until "_"
+                var shortnamePrefix = course.shortname.split('_')[0];
+                // Check if it contains 'AT' and set 'AT' attribute accordingly
+                course.AT = shortnamePrefix.includes('AT');
+            });
+            courses.sort(function (a, b) {
+                // Example: Sorting alphabetically based on course names
+                return a.shortname.localeCompare(b.shortname);
+            });
+          
             var context = {
                 courses: courses
             };
             templates.render('tool_lp/linked_courses_summary', context).done(function(html) {
-                str.get_string('linkedcourses', 'tool_lp').done(function(linkedcourses) {
+                str.get_string('linkedcourses', 'block_lpprogressx').done(function(linkedcourses) {
                     new Dialogue(
                         linkedcourses, // Title.
                         html // The linked courses.

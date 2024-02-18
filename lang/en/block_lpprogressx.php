@@ -33,3 +33,4 @@ $string['completed'] = 'Completed!';
 $string['checkchar'] = '◉';
 $string['uncheckchar'] = '◎';
 $string['pluginname'] = 'Learning Plans Progress (x-version)';
+$string['linkedcourses'] = 'Linked Nuggets';

@@ -75,3 +75,14 @@
   flex: unset;
   max-width: 100% ;
 }
+
+.block_lpprogressx .metatile {
+    min-height: 70px;
+}
+.block_lpprogressx .metatile-content {
+    min-height: 70px;
+}
+
+.block_lpprogressx .metatile-img {
+    min-height: 70px;
+}
