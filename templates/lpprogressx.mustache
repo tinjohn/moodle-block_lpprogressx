@@ -128,7 +128,7 @@ require(['jquery',
                 // tinjohn ADDED Extract the first part of the shortname until "_"
                 var shortnamePrefix = course.shortname.split('_')[0];
                 // Check if it contains 'AT' and set 'AT' attribute accordingly
-                course.AT = shortnamePrefix.includes('AT');
+                course.AT = shortnamePrefix.includes === 'AT';
             });
             courses.sort(function (a, b) {
                 // Example: Sorting alphabetically based on course names
