@@ -86,3 +86,45 @@
 .block_lpprogressx .metatile-img {
     min-height: 70px;
 }
+
+.block_lpprogressx .content {
+	width: inherit;
+	container-type: inline-size;
+}
+/* CHANGED tinjohn 20221010 */
+
+@media(max-width: 286px) {
+	.metatile-img {
+		float: unset;
+		margin: 0 auto;
+	}
+	.metatile-content {
+		font-size: clamp(0.9em, 5cqi, 2em);
+	}
+	.metatile {
+		  background-color: #f0f0f0;
+		  /*color: #666;*/
+	    border-top: 5px solid #1c3d76;
+			border-right: 0px;
+	    padding-top: 10px;
+	    width: 100%;
+			width: calc(100% - 2px);
+			padding: 2px;
+			margin: 0 auto;
+			margin-bottom: 10px;
+	}
+	/* .metatile:nth-child(even) {
+    margin-left: 0;
+		margin-right: auto;
+	}
+	.metatile:nth-child(odd) {
+    margin-left: 0;
+		margin-right: auto;
+	} */
+	.metatile h2 {
+		text-align: center;
+	}
+  .block_lpprogressx .mform {
+			display: block;
+  }
+}
