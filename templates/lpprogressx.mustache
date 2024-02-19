@@ -52,26 +52,28 @@
     <br>
 </div>
 
-<div class="metatile-container">
+<div class="lpprogressxtile-container">
   {{^plans}}
     <p dir="ltr" style="text-align: left;"><span>Lass dir vorbereitete Lernpläne anzeigen. Diese Option kannst du aktivieren, indem du in deinem Profil unter&nbsp;</span><a href="https://dev-isy.th-luebeck.de/oncapflege/user/edit.php?returnto=profile">Profil bearbeiten</a>&nbsp;bei&nbsp;<strong>Weitere Felder</strong>&nbsp;das Feld&nbsp;<strong>Lernplanvorschläge</strong><span>&nbsp;anzeigen ankreuzt. Das System sucht dann vorbereitete Lernpläne aus und zeigt sie dir an. Du kannst selbst entscheiden, ob du den gesamten Lernpfad oder nur Teile davon absolvieren möchtest.</span></p>  
   {{/plans}}
   {{#plans}}
   {{#insidebar}}
-    <div class="metatile">
+    <div class="lpprogressxtile">
   {{/insidebar}}
   {{^insidebar}}     
-    <div class="metatile">
+    <div class="lpprogressxtile">
   {{/insidebar}}
-        <div class="metatile-img d-flex justify-content-center align-items-center">
+        <div class="lpprogressxtile-img d-flex justify-content-center align-items-center">
+          <a class="sectiontoggle collapsed {{#iscompleted}} green {{/iscompleted}}" data-toggle="collapse" href="#collapsePlan{{id}}" role="button" aria-expanded="false" aria-controls="collapsePlan{{id}}">
         {{#iscompleted}}
             <i class="fa fa-3x fa-graduation-cap green"></i>
         {{/iscompleted}}
         {{^iscompleted}} 
             <i class="fa fa-3x fa-sitemap text-primary"></i>
         {{/iscompleted}}
+          </a>
         </div>
-        <div class="metatile-content">
+        <div class="lpprogressxtile-content">
             <h2 class="d-flex justify-content-between align-items-center">
                 <a class="sectiontoggle collapsed {{#iscompleted}} green {{/iscompleted}}" data-toggle="collapse" href="#collapsePlan{{id}}" role="button" aria-expanded="false" aria-controls="collapsePlan{{id}}">
                     {{name}}
@@ -89,14 +91,16 @@
                 {{#competencies}}
                   <li class="step0 {{#isproficient}}active green{{/isproficient}} ">
                     <a class="{{#isproficient}}active green{{/isproficient}}" href="#" data-id="{{competency.id}}" data-action="find-courses-link">{{competency.shortname}}</a>
+                    {{#competency.description}}
                     <a data-toggle="collapse" href="#competencyDescription{{competency.id}}" role="button" aria-expanded="false" aria-controls="competencyDescription{{competency.id}}">…</a>
+                    {{/competency.description}}
                     <div class="collapse" id="competencyDescription{{competency.id}}">
                         {{{competency.description}}}
                     </div>
                   </li>
                 {{/competencies}}
                 <li class="step0 {{#iscompleted}}active{{/iscompleted}}">
-                  <h4 class="{{^iscompleted}}text-muted{{/iscompleted}}{{#iscompleted}}green{{/iscompleted}} final">{{#str}} completed, block_lpprogressx {{/str}}</h4>
+                  <h4 class="{{^iscompleted}}text-muted{{/iscompleted}}{{#iscompleted}}green{{/iscompleted}} final">            <i class="fa fa-3x fa-graduation-cap green"></i></h4>
                 </li>
               </ul>
 
